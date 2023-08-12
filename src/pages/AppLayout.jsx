@@ -1,5 +1,11 @@
+import Sidebar from "../components/Sidebar";
+
 function AppLayout() {
-  return <div>AppLayout</div>;
+  return (
+    <div>
+      <Sidebar />
+    </div>
+  );
 }
 
 export default AppLayout;
