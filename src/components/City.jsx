@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import styles from "./City.module.css";
+import ButtonBack from "./ButtonBack";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -10,6 +12,7 @@ const formatDate = (date) =>
 
 function City() {
   // TEMP DATA
+
   const currentCity = {
     cityName: "Lisbon",
     emoji: "🇵🇹",
