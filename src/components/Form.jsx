@@ -30,7 +30,7 @@ function Form() {
   const [date, setDate] = useState("");
   const [notes, setNotes] = useState("");
   const [lat, lng] = useUrlPosition();
-  const { createCity, isLoading } = useCities();
+  const { createCity, isLoading, error } = useCities();
   const navigate = useNavigate();
   const [geocodingError, setGeocodingError] = useState(null);
 
@@ -87,6 +87,8 @@ function Form() {
   if (isLoadingGeocoding) return <Spinner />;
 
   if (geocodingError) return <Message message={geocodingError} />;
+
+  // if (error) return <Message message={error} />;
 
   if (!lat && !lng)
     return (

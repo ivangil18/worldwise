@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import { Navigate, useParams, useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./City.module.css";
 import { useEffect } from "react";
 import { useCities } from "../contexts/CitiesContext";
 import Spinner from "./Spinner";
-import Button from "./Button";
 import BackButton from "./BackButton";
+import Message from "./Message";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -18,7 +18,7 @@ const formatDate = (date) =>
 function City() {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const { currentCity, getCity, isLoading } = useCities();
+  const { currentCity, getCity, isLoading, error } = useCities();
 
   const { id } = useParams();
 
@@ -34,6 +34,8 @@ function City() {
   const { cityName, emoji, date, notes } = currentCity;
 
   if (isLoading) return <Spinner />;
+
+  if (error) return <Message message={error} />;
 
   return (
     <div className={styles.city}>
