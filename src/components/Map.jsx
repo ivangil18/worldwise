@@ -1,9 +1,11 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
-import Button from "./Button";
+import { useGeolocation } from "../Hooks/useGeolocation";
+import { useUrlPosition } from "../Hooks/UseUrlPosition";
 
 import styles from "./Map.module.css";
+
 import {
   MapContainer,
   Marker,
@@ -12,10 +14,9 @@ import {
   useMap,
   useMapEvents,
 } from "react-leaflet";
-import { useGeolocation } from "../Hooks/Geolocation";
+import Button from "./Button";
 
 function Map() {
-  const [searchParams] = useSearchParams();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const { cities } = useCities();
   const {
@@ -23,9 +24,7 @@ function Map() {
     position: geolocationPosition,
     getPosition,
   } = useGeolocation();
-
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
+  const [lat, lng] = useUrlPosition();
 
   useEffect(
     function () {
@@ -37,9 +36,9 @@ function Map() {
 
   useEffect(
     function () {
-      if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
+      if (lat && lng) setMapPosition([lat, lng]);
     },
-    [mapLat, mapLng]
+    [lat, lng]
   );
 
   return (
@@ -74,6 +73,8 @@ function Map() {
         ))}
         <RelocateMap position={mapPosition} />
         <DetectClick />
+
+        {/* THIS IS TO ADD A MARKER EVERY WHERE THE USER CLICKS ON THE MAP */}
         {/* {geolocationPosition && (
           <Marker position={mapPosition}>
             <Popup>

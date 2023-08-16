@@ -35,6 +35,54 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Barcelona",
+      "country": "Spain",
+      "date": "2023-08-16T04:00:00.000Z",
+      "emoji": "🇪🇸",
+      "notes": "Nadie sabe nada",
+      "position": {
+        "lat": "41.40359574314672",
+        "lng": "2.1615600585937504"
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Sainte-Feyre-la-Montagne",
+      "country": "France",
+      "date": "2023-08-28T04:00:00.000Z",
+      "emoji": "🇫🇷",
+      "notes": "",
+      "position": {
+        "lat": "45.89000815866184",
+        "lng": "2.2192382812500004"
+      },
+      "id": 98443199
+    },
+    {
+      "cityName": "Ramoulu",
+      "country": "France",
+      "date": "2023-08-16T04:00:00.000Z",
+      "emoji": "🇫🇷",
+      "notes": "",
+      "position": {
+        "lat": "48.22467264956519",
+        "lng": "2.2851562500000004"
+      },
+      "id": 98443200
+    },
+    {
+      "cityName": "Greater London",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "date": "2023-08-16T04:00:00.000Z",
+      "emoji": "🇬🇧",
+      "notes": "",
+      "position": {
+        "lat": "51.56341232867588",
+        "lng": "-0.3515625"
+      },
+      "id": 98443201
     }
   ]
 }
