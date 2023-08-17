@@ -1,18 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Etampes",
-      "country": "France",
-      "date": "2023-08-06T04:00:00.000Z",
-      "emoji": "🇫🇷",
-      "notes": "",
-      "position": {
-        "lat": "48.40003249610685",
-        "lng": "2.1093750000000004"
-      },
-      "id": 3
-    },
-    {
       "cityName": "Niedernberg",
       "country": "Germany",
       "date": "2023-08-08T04:00:00.000Z",
